@@ -51,8 +51,12 @@
     "menus": {
       "commandPalette": [
         {
+          "command": "importer-vscode.fold-imported",
+          "when": "inDebugMode"
+        },
+        {
           "command": "importer-vscode.placeholder",
-          "when": "editorFocus"
+          "when": "inDebugMode"
         }
       ]
     },
