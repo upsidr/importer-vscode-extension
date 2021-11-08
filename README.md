@@ -22,14 +22,14 @@ The below is the current list of supported actions.
 
 ## 📝 Release Notes
 
-### v0.0.2 - Initial Release, with activation fix
-
-> 8th November, 2021
-
-Fix the startup event handling to ensure command can be run correctly.
-
-### v0.0.1 - Initial Release
+### v0.0.3 - Initial Release
 
 > 8th November, 2021
 
 The very first release with minimal implementation.
+
+### v0.0.2, v0.0.1
+
+> 8th November, 2021
+
+Critical bugs were found, which made the extension to be essentially unusable. Please do not use this version.
