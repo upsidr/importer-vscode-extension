@@ -13,7 +13,11 @@
   ],
   "activationEvents": [
     "onLanguage:yaml",
-    "onLanguage:markdown"
+    "onLanguage:markdown",
+    "onCommand:importer-vscode.update",
+    "onCommand:importer-vscode.purge",
+    "onCommand:importer-vscode.wrap-with-importer",
+    "onCommand:importer-vscode.wrap-with-exporter"
   ],
   "main": "./out/extension.js",
   "contributes": {
