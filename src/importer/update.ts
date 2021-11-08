@@ -15,7 +15,7 @@ export async function update(outputChannel: vscode.OutputChannel) {
 
     let result: string;
     try {
-        result = await execShell(`importrer update ${fileName}`);
+        result = await execShell(`importer update ${fileName}`);
     } catch (e) {
         const errorDetail = e as string;
         outputChannel.appendLine(`${timestamp}: ${errorDetail}`);
