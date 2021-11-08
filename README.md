@@ -24,4 +24,6 @@ The below is the current list of supported actions.
 
 ### v0.0.1 - Initial Release
 
+> 8th November, 2021
+
 The very first release with minimal implementation.

@@ -1,6 +1,8 @@
 # 📝 Change Log
 
-## v0.0.1 - 9th November, 2021
+## v0.0.1 - Initial Release
+
+> 8th November, 2021
 
 Initial release with minimal code and testing. This release adds the following commands.
 
