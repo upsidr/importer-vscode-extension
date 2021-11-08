@@ -3,6 +3,7 @@
   "displayName": "importer-vscode",
   "description": "Importer Extension for Visual Studio Code",
   "version": "0.0.1",
+  "publisher": "upsidr",
   "engines": {
     "vscode": "^1.62.0"
   },
@@ -70,6 +71,10 @@
         "path": "./src/snippets/markdown-importer.code-snippets"
       }
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upsidr/importer-vscode-extension.git"
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
