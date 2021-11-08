@@ -19,17 +19,15 @@ function wrapWithMarkers(outputChannel: vscode.OutputChannel, markerType: Marker
 
     if (!isRangeValid(startLine, endLine, textEditor)) { return; }
 
-    outputChannel.appendLine(`${timestamp}: start ${startLine}, end ${endLine}`);
-
     let text = textEditor.document.getText(lines);
     if (text === "") { return; }
     if (!text.endsWith("\n")) { text += "\n"; }
 
-    const fileType = textEditor.document.languageId;
+    const fileExtension = textEditor.document.fileName.split('.').pop();;
 
     outputChannel.appendLine(`${timestamp}: ${text}`);
 
-    textEditor.insertSnippet(snippet(fileType as FileType, markerType, text), lines);
+    textEditor.insertSnippet(snippet(fileExtension as FileType, markerType, text), lines);
 }
 
 function snippet(fileType: FileType, markerType: MarkerType, wrappedText: string): vscode.SnippetString {
@@ -61,13 +59,14 @@ function snippet(fileType: FileType, markerType: MarkerType, wrappedText: string
     let tmpl: string;
     switch (fileType) {
         case "yaml":
+        case "yml":
             const precedingWhitespace = wrappedText.search(/\S|$/);
             tmpl =
                 `${' '.repeat(precedingWhitespace)}# == ${head(markerType)}: \${1:name} / begin ${options(markerType)}==\n` +
                 `${wrappedText}` +
                 `${' '.repeat(precedingWhitespace)}# == ${head(markerType)}: \${1:name} / end ==\n`;
             return new vscode.SnippetString(tmpl);
-        case "markdown":
+        case "md":
             tmpl =
                 `<!-- == ${head(markerType)}: \${1:name} / begin == -->\n` +
                 `${wrappedText}` +

@@ -2,7 +2,8 @@ import * as cp from "child_process";
 
 type FileType =
     | "yaml"
-    | "markdown";
+    | "yml"
+    | "md";
 
 type MarkerType =
     | "ImporterMarker"
