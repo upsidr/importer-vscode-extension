@@ -15,7 +15,12 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [
+            # Commenting out as there is no clear reason why this should run on multiple OSs.
+            # macos-latest,
+            # windows-latest,
+            ubuntu-latest,
+          ]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -30,7 +35,9 @@ jobs:
       - run: npm test
         if: runner.os != 'Linux'
       - name: Publish
-        if: success() && startsWith( github.ref, 'refs/tags/releases/') && matrix.os == 'ubuntu-latest'
+        if: success() &&
+          startsWith( github.ref, 'refs/tags/v') &&
+          matrix.os == 'ubuntu-latest'
         run: npm run deploy
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
