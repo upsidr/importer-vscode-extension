@@ -1,6 +1,9 @@
 # Ref: https://code.visualstudio.com/api/working-with-extensions/continuous-integration#automated-publishing
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
