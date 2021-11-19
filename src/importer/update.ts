@@ -14,7 +14,7 @@ export async function update(outputChannel: vscode.OutputChannel) {
 
     let result: string;
     try {
-        vscode.window.activeTextEditor?.document.save();
+        await vscode.window.activeTextEditor?.document.save();
         result = await execShell(`importer update ${fileName}`);
     } catch (e) {
         const errorDetail = e as string;

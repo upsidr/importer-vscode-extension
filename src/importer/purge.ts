@@ -14,7 +14,7 @@ export async function purge(outputChannel: vscode.OutputChannel) {
 
     let result: string;
     try {
-        vscode.window.activeTextEditor?.document.save();
+        await vscode.window.activeTextEditor?.document.save();
         result = await execShell(`importer purge ${fileName}`);
     } catch (e) {
         const errorDetail = e as string;
