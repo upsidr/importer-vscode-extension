@@ -1,6 +1,9 @@
 # Ref: https://code.visualstudio.com/api/working-with-extensions/continuous-integration#automated-publishing
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -18,9 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.4.1
         with:
-          node-version: 10.x
+          node-version: "14"
       - run: npm install
       - run: xvfb-run -a npm test
         if: runner.os == 'Linux'

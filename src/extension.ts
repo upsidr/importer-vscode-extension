@@ -7,12 +7,12 @@ import { wrapWithExporterMarkers, wrapWithImporterMarkers } from './importer/wra
 export async function activate(context: vscode.ExtensionContext) {
 	const outputChannel = vscode.window.createOutputChannel("Importer");
 
-	let updateCmd = vscode.commands.registerCommand('importer-vscode.update', () => update(outputChannel));
-	let purgeCmd = vscode.commands.registerCommand('importer-vscode.purge', () => purge(outputChannel));
+	const updateCmd = vscode.commands.registerCommand('importer-vscode.update', () => update(outputChannel));
+	const purgeCmd = vscode.commands.registerCommand('importer-vscode.purge', () => purge(outputChannel));
 
-	let wrapWithImproterCmd = vscode.commands.registerCommand('importer-vscode.wrap-with-importer',
+	const wrapWithImproterCmd = vscode.commands.registerCommand('importer-vscode.wrap-with-importer',
 		() => wrapWithImporterMarkers(outputChannel));
-	let wrapWithExproterCmd = vscode.commands.registerCommand('importer-vscode.wrap-with-exporter',
+	const wrapWithExproterCmd = vscode.commands.registerCommand('importer-vscode.wrap-with-exporter',
 		() => wrapWithExporterMarkers(outputChannel));
 
 	// TODO: Add fold setup
