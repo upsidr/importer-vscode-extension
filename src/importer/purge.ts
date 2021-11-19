@@ -14,6 +14,7 @@ export async function purge(outputChannel: vscode.OutputChannel) {
 
     let result: string;
     try {
+        vscode.window.activeTextEditor?.document.save();
         result = await execShell(`importer purge ${fileName}`);
     } catch (e) {
         const errorDetail = e as string;
@@ -23,6 +24,6 @@ export async function purge(outputChannel: vscode.OutputChannel) {
     }
 
     // importer purge does not return anything, and thus result is not being used here.
-    
+
     outputChannel.appendLine(`${timestamp}: 'importer purge' has been run against '${fileName}'`);
 }

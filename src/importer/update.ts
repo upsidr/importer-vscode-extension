@@ -9,12 +9,12 @@ export async function update(outputChannel: vscode.OutputChannel) {
         return;
     }
 
-
     const fileName = vscode.window.activeTextEditor?.document.fileName;
     const timestamp = new Date();
 
     let result: string;
     try {
+        vscode.window.activeTextEditor?.document.save();
         result = await execShell(`importer update ${fileName}`);
     } catch (e) {
         const errorDetail = e as string;
