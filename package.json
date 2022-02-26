@@ -2,7 +2,7 @@
   "name": "importer-vscode",
   "displayName": "importer-vscode",
   "description": "Importer Extension for Visual Studio Code",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "upsidr",
   "engines": {
     "vscode": "^1.62.0"
