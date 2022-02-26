@@ -16,7 +16,7 @@
     "onLanguage:markdown",
     "onCommand:importer-vscode.update",
     "onCommand:importer-vscode.purge",
-    "onCommand:importer-vscode.wrap-with-importer",
+    "onCommand:importer-vscode.insert-importer-marker",
     "onCommand:importer-vscode.wrap-with-exporter"
   ],
   "main": "./out/extension.js",
@@ -33,9 +33,9 @@
         "title": "Purge"
       },
       {
-        "command": "importer-vscode.wrap-with-importer",
+        "command": "importer-vscode.insert-importer-marker",
         "category": "Importer",
-        "title": "Wrap with Importer Marker"
+        "title": "Insert Importer Marker"
       },
       {
         "command": "importer-vscode.wrap-with-exporter",
