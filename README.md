@@ -1,3 +1,8 @@
+> [!WARNING]
+> This repository is archived and is no longer maintained.
+>
+> Issues and pull requests are not monitored.
+
 # Importer Extension for Visual Studio Code
 
 > NOTE: This extension is still in its early days, and active development is taking place. If you find any issues with the extension, please file an issue in this repository!
